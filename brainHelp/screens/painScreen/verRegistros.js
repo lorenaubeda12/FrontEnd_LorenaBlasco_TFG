@@ -73,15 +73,19 @@ const PantallaPrincipalRegistros = ({navigation, route}) => {
 
   const generarPDF = async () => {
     try {
+      const ipAddressResponse = await fetch(
+        'https://dns.google/resolve?name=harishan.hopto.org&type=A',
+      );
+      const ipAddressData = await ipAddressResponse.json();
+      const ipAddress = ipAddressData.Answer[0].data;
       const response = await axios.post(
-        'http://192.168.1.50:8000/generar-pdf',
+        'http://'+ipAddress +':8000/generar-pdf',
         {
           registros: registros,
           correo: correo, // Reemplaza con la propiedad correcta que contiene el correo electrónico del usuario
         },
       );
       console.log('PDF generado correctamente');
-      console.log('Ruta del archivo PDF:', response.data);
       Alert.alert(
         'PDF generado correctamente',
         'Este será enviado a su correo electrónico registrado',

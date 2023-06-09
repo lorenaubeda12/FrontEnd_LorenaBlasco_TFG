@@ -242,7 +242,7 @@ const FinalizarRegistro = ({navigation, route}) => {
             source={require('../../assets/img/desencadeant.png')}></Image>
         </View>
         <View style={styles.contenedorTexto}>
-          <Text style={styles.texto}>Tipo de dolor</Text>
+          <Text style={styles.texto}>Desencadenante</Text>
           <Text style={styles.textoSubtitulo}>{causante}</Text>
         </View>
       </View>

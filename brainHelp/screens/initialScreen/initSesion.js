@@ -32,6 +32,16 @@ const InicioSession = ({navigation, route}) => {
   console.log('*****************************');
   const inicioSession = async () => {
     try {
+      if(email === '' || pass === ''){
+        Alert.alert('Error', 'No puede haber campos vacíos', [
+          {
+            text: 'Ok',
+          },
+        ]);
+        return;
+      }
+      else{
+
       console.log('*****************************');
       console.log(email);
       console.log(pass);
@@ -66,6 +76,7 @@ const InicioSession = ({navigation, route}) => {
         console.log('Usuario registrado');
         navigation.navigate('PantallaPrincipal', {datos: login.data.body});
       }
+    }
     } catch (error) {
       console.log(error);
     }
