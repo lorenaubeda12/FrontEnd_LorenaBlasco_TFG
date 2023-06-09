@@ -115,7 +115,7 @@ const globalStyles = StyleSheet.create({
     marginBottom: 2,
     marginLeft: 30,
     fontSize: 20,
-    color: '#8187dc',
+    color: 'black',
     fontFamily: 'Questrial-Regular',
   },
   botonesRegistro: {
